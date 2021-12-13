@@ -17,11 +17,10 @@ func main() {
 	defer c.Close()
 
 	workflowOptions := client.StartWorkflowOptions{
-		ID:        "hello-workflow-video",
 		TaskQueue: "hello-world",
 	}
 
-	we, err := c.ExecuteWorkflow(context.Background(), workflowOptions, helloworkflow.Workflow, "First Roi")
+	we, err := c.ExecuteWorkflow(context.Background(), workflowOptions, helloworkflow.Workflow, "victor")
 	if err != nil {
 		log.Fatalln("Unable to execute workflow", err)
 	}
