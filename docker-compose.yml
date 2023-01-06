@@ -1,0 +1,21 @@
+version: "3.8"
+services:
+    worker:
+        build:
+            context: .
+            dockerfile: Dockerfile.worker
+        network_mode: host
+
+    starter:
+        build:
+            context: .
+            dockerfile: Dockerfile.starter
+        network_mode: host
+        # depends_on:
+        #   - waficashwork
+
+    # temporal:
+    #     build: .
+    #     container_name: temporal
+    #     ports:
+    #       - '8080:8080'
